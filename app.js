@@ -1,123 +1,77 @@
-// ==========================================
-// BAT-LAB — SISTEMA PRINCIPAL
-// ==========================================
-
-
-// ==========================================
-// ENCICLOPÉDIA
-// ==========================================
-
 function abrirEnciclopedia() {
 
     const conteudo = document.getElementById("conteudo");
 
     conteudo.innerHTML = `
+        <h2>📚 Enciclopédia BAT-LAB</h2>
 
-        <div class="bem-vindo">
+        <p>
+            Explore conhecimentos de Análises Clínicas.
+        </p>
 
-            <div class="bat-symbol">📚</div>
-
-            <h2>Enciclopédia BAT-LAB</h2>
-
-            <p>
-                Explore o conhecimento das Análises Clínicas
-                organizado por áreas laboratoriais.
-            </p>
-
+        <div class="card-enciclopedia">
+            <h3>🩸 Hematologia</h3>
+            <p>Estudo dos elementos celulares e componentes do sangue.</p>
+            <button onclick="abrirHematologia()">
+                Explorar
+            </button>
         </div>
 
-        <div class="categorias">
-
-            <button onclick="abrirCategoria('hematologia')">
-                🩸 Hematologia
+        <div class="card-enciclopedia">
+            <h3>🧪 Bioquímica</h3>
+            <p>Estudo das substâncias e reações químicas do organismo.</p>
+            <button>
+                Em construção
             </button>
-
-            <button onclick="abrirCategoria('bioquimica')">
-                🧪 Bioquímica
-            </button>
-
-            <button onclick="abrirCategoria('microbiologia')">
-                🦠 Microbiologia
-            </button>
-
-            <button onclick="abrirCategoria('parasitologia')">
-                🪱 Parasitologia
-            </button>
-
-            <button onclick="abrirCategoria('imunologia')">
-                🛡️ Imunologia
-            </button>
-
-            <button onclick="abrirCategoria('urinanalise')">
-                💧 Urinálise
-            </button>
-
         </div>
 
-        <button onclick="voltarInicio()">
-            ← Voltar
-        </button>
+        <div class="card-enciclopedia">
+            <h3>🦠 Microbiologia</h3>
+            <p>Estudo dos microrganismos de importância clínica.</p>
+            <button>
+                Em construção
+            </button>
+        </div>
+
+        <div class="card-enciclopedia">
+            <h3>🧬 Imunologia</h3>
+            <p>Estudo do sistema imunológico e suas respostas.</p>
+            <button>
+                Em construção
+            </button>
+        </div>
     `;
 }
 
 
-// ==========================================
-// CATEGORIAS
-// ==========================================
-
-function abrirCategoria(categoria) {
+function abrirHematologia() {
 
     const conteudo = document.getElementById("conteudo");
 
-    const nomes = {
-
-        hematologia: "🩸 Hematologia",
-
-        bioquimica: "🧪 Bioquímica",
-
-        microbiologia: "🦠 Microbiologia",
-
-        parasitologia: "🪱 Parasitologia",
-
-        imunologia: "🛡️ Imunologia",
-
-        urinanalise: "💧 Urinálise"
-
-    };
-
     conteudo.innerHTML = `
+        <h2>🩸 Hematologia</h2>
 
-        <div class="bem-vindo">
+        <p>
+            A Hematologia é a área das Análises Clínicas
+            dedicada ao estudo do sangue, seus elementos
+            celulares e componentes.
+        </p>
 
-            <div class="bat-symbol">
-                🔬
-            </div>
-
-            <h2>${nomes[categoria]}</h2>
+        <div class="card-enciclopedia">
+            <h3>🔬 Neutrófilo</h3>
 
             <p>
-                Esta seção será preenchida com conteúdos,
-                imagens, conceitos, procedimentos e
-                referências científicas.
+                Leucócito pertencente ao grupo dos granulócitos,
+                relacionado principalmente à resposta imunológica
+                contra agentes infecciosos.
             </p>
 
-            <span class="status">
-                ● Módulo preparado
-            </span>
-
+            <button onclick="abrirEnciclopedia()">
+                ← Voltar
+            </button>
         </div>
-
-        <button onclick="abrirEnciclopedia()">
-            ← Voltar para categorias
-        </button>
-
     `;
 }
-
-
-// ==========================================
-// BAT-IA
-// ==========================================
 
 function abrirIA() {
 

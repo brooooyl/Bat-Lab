@@ -1,0 +1,10 @@
+{
+  "name": "BAT-LAB",
+  "short_name": "BAT-LAB",
+  "description": "Enciclopédia Digital de Análises Clínicas",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#101010",
+  "theme_color": "#101010",
+  "orientation": "portrait"
+}

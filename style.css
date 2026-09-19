@@ -161,3 +161,93 @@ footer {
         padding: 25px;
     }
 }
+
+/* ================================
+   ENCICLOPÉDIA - CATEGORIAS
+   ================================ */
+
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.categoria {
+    min-height: 150px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    border: 1px solid #3a3a3a;
+    border-radius: 18px;
+
+    background: #181818;
+    color: white;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.categoria:hover {
+    transform: translateY(-4px);
+    background: #222;
+    border-color: #777;
+}
+
+.categoria:first-line {
+    font-size: 2rem;
+}
+
+.categoria strong {
+    font-size: 1.2rem;
+}
+
+.categoria span {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+
+/* ================================
+   BOTÃO VOLTAR
+   ================================ */
+
+#conteudo > button {
+    margin-bottom: 25px;
+}
+
+
+/* ================================
+   LINHA DE SEPARAÇÃO
+   ================================ */
+
+#conteudo hr {
+    border: none;
+    border-top: 1px solid #333;
+    margin: 25px 0;
+}
+
+
+/* ================================
+   CELULAR
+   ================================ */
+
+@media (max-width: 600px) {
+
+    .categorias {
+        grid-template-columns: 1fr;
+    }
+
+    .categoria {
+        min-height: 130px;
+    }
+
+}

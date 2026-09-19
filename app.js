@@ -6,72 +6,52 @@ function abrirEnciclopedia() {
         <h2>📚 Enciclopédia BAT-LAB</h2>
 
         <p>
-            Explore conhecimentos de Análises Clínicas.
+            Explore as principais áreas das Análises Clínicas.
         </p>
 
-        <div class="card-enciclopedia">
-            <h3>🩸 Hematologia</h3>
-            <p>Estudo dos elementos celulares e componentes do sangue.</p>
-            <button onclick="abrirHematologia()">
-                Explorar
-            </button>
-        </div>
+        <div class="categorias">
 
-        <div class="card-enciclopedia">
-            <h3>🧪 Bioquímica</h3>
-            <p>Estudo das substâncias e reações químicas do organismo.</p>
-            <button>
-                Em construção
+            <button class="categoria" onclick="abrirCategoria('hematologia')">
+                <span class="icone-categoria">🩸</span>
+                <strong>Hematologia</strong>
+                <span>Sangue e células</span>
             </button>
-        </div>
 
-        <div class="card-enciclopedia">
-            <h3>🦠 Microbiologia</h3>
-            <p>Estudo dos microrganismos de importância clínica.</p>
-            <button>
-                Em construção
+            <button class="categoria" onclick="abrirCategoria('bioquimica')">
+                <span class="icone-categoria">🧪</span>
+                <strong>Bioquímica</strong>
+                <span>Exames bioquímicos</span>
             </button>
-        </div>
 
-        <div class="card-enciclopedia">
-            <h3>🧬 Imunologia</h3>
-            <p>Estudo do sistema imunológico e suas respostas.</p>
-            <button>
-                Em construção
+            <button class="categoria" onclick="abrirCategoria('microbiologia')">
+                <span class="icone-categoria">🦠</span>
+                <strong>Microbiologia</strong>
+                <span>Microrganismos</span>
             </button>
+
+            <button class="categoria" onclick="abrirCategoria('imunologia')">
+                <span class="icone-categoria">🧬</span>
+                <strong>Imunologia</strong>
+                <span>Sistema imunológico</span>
+            </button>
+
+            <button class="categoria" onclick="abrirCategoria('parasitologia')">
+                <span class="icone-categoria">🪱</span>
+                <strong>Parasitologia</strong>
+                <span>Parasitas</span>
+            </button>
+
+            <button class="categoria" onclick="abrirCategoria('urinalise')">
+                <span class="icone-categoria">🧫</span>
+                <strong>Urinálise</strong>
+                <span>Exames de urina</span>
+            </button>
+
         </div>
     `;
 }
 
 
-function abrirHematologia() {
-
-    const conteudo = document.getElementById("conteudo");
-
-    conteudo.innerHTML = `
-        <h2>🩸 Hematologia</h2>
-
-        <p>
-            A Hematologia é a área das Análises Clínicas
-            dedicada ao estudo do sangue, seus elementos
-            celulares e componentes.
-        </p>
-
-        <div class="card-enciclopedia">
-            <h3>🔬 Neutrófilo</h3>
-
-            <p>
-                Leucócito pertencente ao grupo dos granulócitos,
-                relacionado principalmente à resposta imunológica
-                contra agentes infecciosos.
-            </p>
-
-            <button onclick="abrirEnciclopedia()">
-                ← Voltar
-            </button>
-        </div>
-    `;
-}
 function abrirCategoria(categoria) {
 
     const conteudo = document.getElementById("conteudo");
@@ -128,181 +108,56 @@ function abrirCategoria(categoria) {
         </p>
     `;
 }
+
+
 function abrirIA() {
 
     const conteudo = document.getElementById("conteudo");
 
     conteudo.innerHTML = `
+        <h2>🤖 Bat-IA</h2>
 
-        <div class="bem-vindo">
+        <p>
+            O assistente de inteligência artificial
+            será conectado posteriormente.
+        </p>
 
-            <div class="bat-symbol">
-                🤖
-            </div>
-
-            <h2>Bat-IA</h2>
-
-            <p>
-                Assistente educacional do BAT-LAB.
-                Faça uma pergunta sobre Análises Clínicas.
-            </p>
-
-        </div>
-
-
-        <div style="
-            margin-top: 25px;
-        ">
-
-            <input
-                type="text"
-                id="pergunta"
-                placeholder="Ex.: O que é um neutrófilo?"
-                style="
-                    width: 100%;
-                    padding: 16px;
-                    border-radius: 14px;
-                    border: 1px solid #38383f;
-                    background: #0e0e12;
-                    color: white;
-                    font-size: 1rem;
-                    outline: none;
-                "
-                onkeydown="if(event.key === 'Enter') perguntarIA()"
-            >
-
-            <button
-                onclick="perguntarIA()"
-                style="
-                    width: 100%;
-                    margin-top: 12px;
-                    min-height: 65px;
-                "
-            >
-                🦇 Perguntar ao Bat-IA
-            </button>
-
-        </div>
-
-
-        <div
-            id="resposta"
-            style="
-                margin-top: 25px;
-                padding: 20px;
-                border-radius: 16px;
-                border: 1px solid #303038;
-                background: #101014;
-                display: none;
-            "
+        <input
+            type="text"
+            id="pergunta"
+            placeholder="Digite sua pergunta..."
         >
-        </div>
-
 
         <button
-            onclick="voltarInicio()"
-            style="
-                margin-top: 20px;
-                min-height: 60px;
-            "
+            onclick="perguntarIA()"
         >
-            ← Voltar
+            Perguntar
         </button>
 
+        <div id="resposta"></div>
     `;
 }
 
-
-// ==========================================
-// RESPOSTA TEMPORÁRIA DA IA
-// ==========================================
 
 function perguntarIA() {
 
-    const campo = document.getElementById("pergunta");
+    const pergunta = document.getElementById("pergunta").value;
 
     const resposta = document.getElementById("resposta");
 
-    if (!campo || !resposta) {
+    if (!pergunta) {
+        resposta.innerHTML = "Digite uma pergunta.";
         return;
     }
-
-    const pergunta = campo.value.trim();
-
-    if (pergunta === "") {
-
-        resposta.style.display = "block";
-
-        resposta.innerHTML = `
-            <p>
-                ⚠️ Digite uma pergunta primeiro.
-            </p>
-        `;
-
-        return;
-    }
-
-
-    resposta.style.display = "block";
 
     resposta.innerHTML = `
-
-        <strong>🤖 Bat-IA</strong>
-
-        <p style="margin-top: 12px;">
-
-            Pergunta recebida:
-
-            <br><br>
-
-            <strong>
-                "${pergunta}"
-            </strong>
-
+        <p>
+            🤖 O Bat-IA ainda está sendo construído.
         </p>
 
         <p>
-
-            🧠 O núcleo de inteligência artificial
-            será conectado em uma próxima etapa.
-
+            Pergunta recebida:
+            <strong>${pergunta}</strong>
         </p>
-
-        <span class="status">
-            ● Sistema operacional
-        </span>
-
-    `;
-}
-
-
-// ==========================================
-// VOLTAR
-// ==========================================
-
-function voltarInicio() {
-
-    const conteudo = document.getElementById("conteudo");
-
-    conteudo.innerHTML = `
-
-        <div class="bem-vindo">
-
-            <div class="bat-symbol">
-                🦇
-            </div>
-
-            <h2>Bem-vindo ao BAT-LAB</h2>
-
-            <p>
-                Conhecimento laboratorial na palma da mão.
-            </p>
-
-            <span class="status">
-                ● BAT-LAB online
-            </span>
-
-        </div>
-
     `;
 }

@@ -72,7 +72,62 @@ function abrirHematologia() {
         </div>
     `;
 }
+function abrirCategoria(categoria) {
 
+    const conteudo = document.getElementById("conteudo");
+
+    let titulo = "";
+    let descricao = "";
+
+    if (categoria === "hematologia") {
+        titulo = "🩸 Hematologia";
+        descricao = "Estudo do sangue, suas células e componentes.";
+    }
+
+    if (categoria === "bioquimica") {
+        titulo = "🧪 Bioquímica";
+        descricao = "Estudo das substâncias químicas presentes no organismo.";
+    }
+
+    if (categoria === "microbiologia") {
+        titulo = "🦠 Microbiologia";
+        descricao = "Estudo dos microrganismos de importância clínica.";
+    }
+
+    if (categoria === "imunologia") {
+        titulo = "🧬 Imunologia";
+        descricao = "Estudo do sistema imunológico e suas respostas.";
+    }
+
+    if (categoria === "parasitologia") {
+        titulo = "🪱 Parasitologia";
+        descricao = "Estudo dos parasitas relacionados às doenças humanas.";
+    }
+
+    if (categoria === "urinalise") {
+        titulo = "🧫 Urinálise";
+        descricao = "Estudo laboratorial da urina e seus componentes.";
+    }
+
+    conteudo.innerHTML = `
+        <button onclick="abrirEnciclopedia()">
+            ← Voltar para a Enciclopédia
+        </button>
+
+        <h2>${titulo}</h2>
+
+        <p>${descricao}</p>
+
+        <hr>
+
+        <h3>Conteúdo</h3>
+
+        <p>
+            Os artigos desta categoria serão adicionados
+            após a definição do tema do TCC.
+        </p>
+    `;
+}
 function abrirIA() {
 
     const conteudo = document.getElementById("conteudo");

@@ -3,6 +3,10 @@ function abrirEnciclopedia() {
     const conteudo = document.getElementById("conteudo");
 
     conteudo.innerHTML = `
+        <button onclick="voltarInicio()">
+            ← Voltar
+        </button>
+
         <h2>📚 Enciclopédia BAT-LAB</h2>
 
         <p>
@@ -12,37 +16,37 @@ function abrirEnciclopedia() {
         <div class="categorias">
 
             <button class="categoria" onclick="abrirCategoria('hematologia')">
-                <span class="icone-categoria">🩸</span>
+                🩸
                 <strong>Hematologia</strong>
                 <span>Sangue e células</span>
             </button>
 
             <button class="categoria" onclick="abrirCategoria('bioquimica')">
-                <span class="icone-categoria">🧪</span>
+                🧪
                 <strong>Bioquímica</strong>
                 <span>Exames bioquímicos</span>
             </button>
 
             <button class="categoria" onclick="abrirCategoria('microbiologia')">
-                <span class="icone-categoria">🦠</span>
+                🦠
                 <strong>Microbiologia</strong>
                 <span>Microrganismos</span>
             </button>
 
             <button class="categoria" onclick="abrirCategoria('imunologia')">
-                <span class="icone-categoria">🧬</span>
+                🛡️
                 <strong>Imunologia</strong>
                 <span>Sistema imunológico</span>
             </button>
 
             <button class="categoria" onclick="abrirCategoria('parasitologia')">
-                <span class="icone-categoria">🪱</span>
+                🔬
                 <strong>Parasitologia</strong>
                 <span>Parasitas</span>
             </button>
 
-            <button class="categoria" onclick="abrirCategoria('urinalise')">
-                <span class="icone-categoria">🧫</span>
+            <button class="categoria" onclick="abrirCategoria('urinálise')">
+                🧫
                 <strong>Urinálise</strong>
                 <span>Exames de urina</span>
             </button>
@@ -52,39 +56,39 @@ function abrirEnciclopedia() {
 }
 
 
-function abrirCategoria(categoria) {
+function abrirCategoria(tipo) {
 
     const conteudo = document.getElementById("conteudo");
 
     let titulo = "";
     let descricao = "";
 
-    if (categoria === "hematologia") {
+    if (tipo === "hematologia") {
         titulo = "🩸 Hematologia";
         descricao = "Estudo do sangue, suas células e componentes.";
     }
 
-    if (categoria === "bioquimica") {
+    if (tipo === "bioquimica") {
         titulo = "🧪 Bioquímica";
         descricao = "Estudo das substâncias químicas presentes no organismo.";
     }
 
-    if (categoria === "microbiologia") {
+    if (tipo === "microbiologia") {
         titulo = "🦠 Microbiologia";
         descricao = "Estudo dos microrganismos de importância clínica.";
     }
 
-    if (categoria === "imunologia") {
-        titulo = "🧬 Imunologia";
+    if (tipo === "imunologia") {
+        titulo = "🛡️ Imunologia";
         descricao = "Estudo do sistema imunológico e suas respostas.";
     }
 
-    if (categoria === "parasitologia") {
-        titulo = "🪱 Parasitologia";
+    if (tipo === "parasitologia") {
+        titulo = "🔬 Parasitologia";
         descricao = "Estudo dos parasitas relacionados às doenças humanas.";
     }
 
-    if (categoria === "urinalise") {
+    if (tipo === "urinálise") {
         titulo = "🧫 Urinálise";
         descricao = "Estudo laboratorial da urina e seus componentes.";
     }
@@ -110,6 +114,24 @@ function abrirCategoria(categoria) {
 }
 
 
+function voltarInicio() {
+
+    const conteudo = document.getElementById("conteudo");
+
+    conteudo.innerHTML = `
+        <h2>Bem-vindo ao BAT-LAB</h2>
+
+        <p>
+            Conhecimento laboratorial na palma da mão.
+        </p>
+
+        <p>
+            Escolha uma das opções acima para começar.
+        </p>
+    `;
+}
+
+
 function abrirIA() {
 
     const conteudo = document.getElementById("conteudo");
@@ -128,9 +150,7 @@ function abrirIA() {
             placeholder="Digite sua pergunta..."
         >
 
-        <button
-            onclick="perguntarIA()"
-        >
+        <button onclick="perguntarIA()">
             Perguntar
         </button>
 

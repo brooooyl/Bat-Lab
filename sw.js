@@ -1,4 +1,4 @@
-const CACHE_NAME = "bat-lab-v2";
+const CACHE_NAME = "bat-lab-v3";
 
 const FILES = [
     "./",

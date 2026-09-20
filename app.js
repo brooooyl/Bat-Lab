@@ -481,7 +481,6 @@ function abrirArtigo(categoriaChave, indice) {
     const conteudo = document.getElementById("conteudo");
 
     const categoria = categorias[categoriaChave];
-
     const artigo = categoria.artigos[indice];
 
     conteudo.innerHTML = `
@@ -492,24 +491,102 @@ function abrirArtigo(categoriaChave, indice) {
 
         <article class="artigo-completo">
 
-            <p>${categoria.titulo}</p>
+            <div class="artigo-cabecalho">
 
-            ${artigo.texto}
+                <span class="artigo-categoria">
+                    ${categoria.titulo}
+                </span>
 
-            <hr>
+                <h2>${artigo.nome}</h2>
 
-            <h4>📚 Referências</h4>
+                <p class="artigo-introducao">
+                    Conteúdo educacional de Análises Clínicas.
+                </p>
 
-            <p>
-                Referências científicas específicas deste conteúdo
-                serão adicionadas durante a elaboração da versão
-                acadêmica do projeto.
-            </p>
+            </div>
+
+
+            <section class="ficha-secao">
+
+                <h3>🔬 Visão geral</h3>
+
+                ${artigo.texto}
+
+            </section>
+
+
+            <section class="ficha-secao">
+
+                <h3>🧪 Importância laboratorial</h3>
+
+                <p>
+                    A avaliação deste elemento faz parte do estudo
+                    laboratorial e pode contribuir para a interpretação
+                    de diferentes parâmetros biológicos.
+                </p>
+
+                <p>
+                    A análise deve sempre considerar o conjunto dos
+                    resultados laboratoriais, as características da
+                    amostra e o contexto clínico.
+                </p>
+
+            </section>
+
+
+            <section class="ficha-secao curiosidade">
+
+                <h3>🧠 Curiosidade científica</h3>
+
+                <p>
+                    O organismo humano possui diferentes tipos de células
+                    e estruturas especializadas, cada uma desempenhando
+                    funções específicas para a manutenção do equilíbrio
+                    do organismo.
+                </p>
+
+            </section>
+
+
+            <section class="ficha-secao">
+
+                <h3>📚 Referências</h3>
+
+                <p class="referencia-aviso">
+                    As referências científicas específicas deste conteúdo
+                    serão inseridas na versão acadêmica final do projeto,
+                    de acordo com as normas solicitadas pela instituição.
+                </p>
+
+            </section>
+
+
+            <section class="bat-ia-card">
+
+                <div class="bat-ia-icone">
+                    🤖
+                </div>
+
+                <div>
+
+                    <h3>Perguntar ao Bat-IA</h3>
+
+                    <p>
+                        Tire dúvidas sobre este conteúdo com o
+                        assistente inteligente do BAT-LAB.
+                    </p>
+
+                    <button onclick="abrirIA()">
+                        Perguntar ao Bat-IA →
+                    </button>
+
+                </div>
+
+            </section>
 
         </article>
     `;
 }
-
 
 function buscarArtigos() {
 

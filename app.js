@@ -6,6 +6,7 @@ const categorias = {
         artigos: [
             {
                 nome: "Hemácias",
+                imagem: "images/hemacias.jpg",
                 texto: `
                     <h3>Hemácias</h3>
                     <p>
